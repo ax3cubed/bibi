@@ -261,6 +261,7 @@
 	&-zoomin  { @include GENERALICON__LoupeZoomIn(); }
 	&-zoomout { @include GENERALICON__LoupeZoomOut(); }
 	&-reset   { @include GENERALICON__LoupeReset(); }
+	&-readaloud { @include GENERALICON__LoupeReadAloud(); }
 }
 
 .bibi-icon-manage-bookmarks { @include GENERALICON__ManageBookmarks(); }

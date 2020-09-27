@@ -62,6 +62,12 @@
 	}
 }
 
+@mixin GENERALICON__LoupeReadAloud() {
+	&:before {
+		content: "speaker_notes";
+		.bibi-button.active &, .bibi-button.active.hover & { transform: scale(1.25) !important; }
+	}
+}
 @mixin GENERALICON__LoupeZoomOut() {
 	&:before {
 		content: "zoom_out";

@@ -4106,7 +4106,9 @@ I.Loupe = { create: () => {
             Sticky: true,
             Tiled: true,
             id: 'bibi-buttongroup_loupe',
-            Buttons: [{
+            Buttons: [
+                
+                {
                 Labels: { default: { default: `Zoom-in`, ja: `拡大する` } },
                 Icon: `<span class="bibi-icon bibi-icon-loupe bibi-icon-loupe-zoomin"></span>`,
                 Help: true,
@@ -4124,6 +4126,13 @@ I.Loupe = { create: () => {
                 Help: true,
                 action: () => Loupe.scale(Loupe.CurrentTransformation.Scale / S['loupe-scale-per-step']),
                 updateState: function(State) { I.setUIState(this, typeof State == 'string' ? State : (Loupe.CurrentTransformation.Scale <= 1) ? 'disabled' : 'default'); }
+            },
+            {
+                Labels: { default: { default: `Read-aloud`, ja: `大声朗读` } },
+                Icon: `<span class="bibi-icon bibi-icon-loupe bibi-icon-loupe-readaloud"></span>`,
+                Help: true,
+                action: () => Loupe.scale(Loupe.CurrentTransformation.Scale * S['loupe-scale-per-step']),
+                updateState: function(State) { I.setUIState(this, typeof State == 'string' ? State : (Loupe.CurrentTransformation.Scale >= S['loupe-max-scale']) ? 'disabled' : 'default'); }
             }]
         });
         Loupe.updateButtonState = (State) => ButtonGroup.Buttons.forEach(Button => Button.updateState(State));
